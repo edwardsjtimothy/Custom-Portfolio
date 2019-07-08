@@ -42,4 +42,11 @@ body, html {
     border-radius: 50%;
     height: 220px;
     width: 220px;
+    transition: height 1s, width 1s, border 1s;
+  }
+
+  .hero-pic:hover {
+    border:2px solid #ff3300;
+    height: 240px;
+    width: 240px;
   }
