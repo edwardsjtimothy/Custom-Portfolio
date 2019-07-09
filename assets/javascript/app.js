@@ -44,12 +44,15 @@ $(function () {
                         "z-index": "1",
                     });
 
+                    
+
                     $(".hero-content").append(wave.hide().fadeIn(2500));
                     ripple += 40;
                     pos -= 20;
                 };
                 if (ripple >= 2000) stopWave();
             }, 100);
+
 
             // $(".hire-me").fadeIn(2000).show();
             $(".hire-me").hide().css("visibility", "visible").fadeIn(2000);

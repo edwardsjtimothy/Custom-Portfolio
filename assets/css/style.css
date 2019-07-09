@@ -43,6 +43,11 @@ body, html {
 .hire-me {
   visibility: hidden;
   border: 2px solid #ff3300;
+  height: 75px;
+}
+
+.hire-me:hover {
+  border: 2px solid #00ffff;
 }
 
   .fade-btn {
