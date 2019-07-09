@@ -10,6 +10,7 @@ body, html {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/darkness.png");
     height: 50%;
     position: relative;
+    overflow: hidden;
   }
   
   .hero-content {
@@ -21,36 +22,30 @@ body, html {
     color: white;
     /* border: 1px solid white; */
     z-index: 100;
-    transition: border 1s;
   }
   
-  .hero-content button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 10px 25px;
-    color: black;
-    background-color: #ddd;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .hero-content button:hover {
-    background-color: #555;
-    color: white;
-  }
-
   .hero-pic {
     border: 2px solid #00ffff;
     border-radius: 50%;
     height: 220px;
-    width: 220px;
-    transition: height 1s, width 1s, border 1s;
-    z-index: 100;
+    width: 220px; 
+    transition: height 1.5s, width 1.5s, border 1.5s;
+    z-index: 2;
   }
 
   .hero-pic:hover {
     border:2px solid #ff3300;
     height: 240px;
     width: 240px;
+  }
+
+
+.hire-me {
+  visibility: hidden;
+  border: 2px solid #ff3300;
+}
+
+  .fade-btn {
+    position: relative;
+    z-index: 2;
   }
