@@ -19,6 +19,9 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    /* border: 1px solid white; */
+    z-index: 100;
+    transition: border 1s;
   }
   
   .hero-content button {
@@ -43,6 +46,7 @@ body, html {
     height: 220px;
     width: 220px;
     transition: height 1s, width 1s, border 1s;
+    z-index: 100;
   }
 
   .hero-pic:hover {
