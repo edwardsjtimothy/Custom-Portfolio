@@ -1,25 +1,22 @@
 $(function () {
 
-    //used to intermitently pulse ring divs after they have been generated
-    var pulseArr = [];
 
+    var hover = false;
+    var bpm = 10000; 
+
+    //used to intermitently pulse ring divs after they have been generated
     function heartbeat () {
 
-
-        // $(".pulse").each(function() {
-        //     console.log($(".pulse").attr("pulse"));
-
-        // });
-        
-
-        for (i = 0; i < pulseArr.length; i++) {
-           var beat = $(".pulse").attr("pulse", 1);
-           console.log(beat);
-
+        var beat = 0
+        setInterval(function() {
             
-        //     // .animate({ borderWidth: "5px" }, 100).animate({ borderWidth: "2px" }, 100);
-        // }
-    };
+        $(".pulse").each(function () {
+            if ($(this).data("pulse") === beat) {
+                $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200);
+            } 
+        });
+        beat += 1;
+    },50);
 };
 
 
@@ -27,7 +24,7 @@ $(function () {
     //runs when profile photo is moused over 
     $(".hero-pic").mouseenter(function () {
 
-
+        hover = true; 
         //enlarges photo and changes border color
         $(".hero-pic").css({
             "border": "2px solid #ff3300",
@@ -69,7 +66,7 @@ $(function () {
                     //generating ring divs
                     var wave = $("<div>");
                     wave.addClass("pulse")
-                    wave.attr("pulse", pulse);
+                    wave.data("pulse", pulse);
                     wave.css({
                         "height": ripple + "px",
                         "width": ripple + "px",
@@ -81,7 +78,6 @@ $(function () {
                         "z-index": "1",
                     });
 
-                
 
                     //fading in ring divs when they are generated and creating a pulse
 
@@ -93,7 +89,6 @@ $(function () {
 
                     //used to intermitently pulse ring divs after they have been generated
                     pulse += 1;
-                    pulseArr.push(pulse);
                 };
 
                 //stopping ring propagation after ripple reaches 2000
@@ -109,9 +104,11 @@ $(function () {
         wave();
     });
 
-    
-$(".hire-me").click(function() {
-    heartbeat();
-});
+      
+setInterval(function() {
+    if (hover) heartbeat();
+    bpm = Math.floor(Math.random() * 10000) + 30000;
+},bpm); 
+
 
 });
