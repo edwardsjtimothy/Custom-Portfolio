@@ -29,7 +29,7 @@ body, html {
     border-radius: 50%;
     height: 220px;
     width: 220px; 
-    transition: height 1.5s, width 1.5s, border 1.5s;
+    transition: height 1s, width 1s, border 1s;
     z-index: 2;
   }
 
@@ -43,7 +43,7 @@ body, html {
 .hire-me {
   visibility: hidden;
   border: 2px solid #ff3300;
-  height: 75px;
+  height: 55px;
 }
 
 .hire-me:hover {
