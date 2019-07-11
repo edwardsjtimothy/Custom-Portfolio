@@ -1,30 +1,66 @@
 $(function () {
 
-
+    //varible to specify whether or not prof pic has been moused over
     var hover = false;
-    var bpm = 10000; 
 
-    //used to intermitently pulse ring divs after they have been generated
-    function heartbeat () {
+    //varible to establish initial wait period before running random pulse function.
+    var bpm = 10000;
+
+    //array of images for portfolio card
+    var portArr = ["assets/images/Tip-Calculator.PNG", "assets/images/Tic-Tac-Toe.PNG", "assets/images/LotR-Trivia.PNG", "assets/images/Gif-Generator.PNG"];
+
+    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
+
+
+    // image cycle function 
+    function imageCyle(x){
+        var whenWeLookin; 
+        if (x === portArr) {
+            whenWeLookin = 7000;
+        } else if (x === bodyArr) {
+            whenWeLookin = 40000;
+        };
+
+        var photoNum = 0;
+        setInterval(function() {
+            console.log("running");
+            if (x === portArr) {
+                $("#port-card").attr("src", x[photoNum]);
+            } else if (x === bodyArr) {
+                console.log("running2");
+                $("body").css({"background": `url(${x[photoNum]}) no-repeat center center fixed`,
+                "-webkit-background-size": "cover",
+                "-moz-background-size": "cover",
+                "-o-background-size": "cover",
+                "background-size": "cover"
+                });
+
+                // $("body").css("background", "url(" + x[photoNum] + ")");
+            };
+            photoNum += 1;
+            if (photoNum === x.length) photoNum = 0;
+        },whenWeLookin);
+    };
+
+    //pulses ring divs
+    function heartbeat() {
 
         var beat = 0
-        setInterval(function() {
-            
-        $(".pulse").each(function () {
-            if ($(this).data("pulse") === beat) {
-                $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200);
-            } 
-        });
-        beat += 1;
-    },50);
-};
+        setInterval(function () {
 
-
+            $(".pulse").each(function () {
+                if ($(this).data("pulse") === beat) {
+                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200);
+                }
+            });
+            beat += 1;
+        }, 50);
+    };
 
     //runs when profile photo is moused over 
     $(".hero-pic").mouseenter(function () {
 
-        hover = true; 
+        hover = true;
         //enlarges photo and changes border color
         $(".hero-pic").css({
             "border": "2px solid #ff3300",
@@ -104,11 +140,21 @@ $(function () {
         wave();
     });
 
-      
-setInterval(function() {
-    if (hover) heartbeat();
-    bpm = Math.floor(Math.random() * 10000) + 30000;
-},bpm); 
+    //used to intermitently pulse ring divs after they have been generated
+    setInterval(function () {
+        if (hover) heartbeat();
+        bpm = Math.floor(Math.random() * 10000) + 30000;
+    }, bpm);
 
+    
+    //cycling portfolio card images
+imageCyle(portArr);
+imageCyle(bodyArr);
+
+
+
+
+
+    
 
 });

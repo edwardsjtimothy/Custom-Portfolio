@@ -1,9 +1,14 @@
-/* landing page */
+/* hero banner styles */
 
 body, html {
     height: 100%;
     margin: 0;
     font-family: 'Roboto Mono', monospace;
+    background: url("../images/body-10.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
   
   .hero {
@@ -20,7 +25,6 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    /* border: 1px solid white; */
     z-index: 100;
   }
   
@@ -55,7 +59,21 @@ body, html {
   z-index: 2;
 }
 
+
+
+
+
+/* card styles */
+
 .check-it {
   margin-top: 40px;
 
 }
+
+.card {
+  background-image: url("../images/darkness.png");
+  color: white;
+  border: 2px solid #00ffff;
+}
+
+
