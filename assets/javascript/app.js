@@ -12,34 +12,40 @@ $(function () {
     var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
 
 
-    // image cycle function 
-    function imageCyle(x){
-        var whenWeLookin; 
-        if (x === portArr) {
-            whenWeLookin = 7000;
-        } else if (x === bodyArr) {
-            whenWeLookin = 40000;
-        };
+$("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
+$("#port-img2").attr("src", "assets/images/Tip-Calculator.PNG")
+
+
+    // cycling through background images
+    function backGroundImgCyle(){
 
         var photoNum = 0;
         setInterval(function() {
-            console.log("running");
-            if (x === portArr) {
-                $("#port-card").attr("src", x[photoNum]);
-            } else if (x === bodyArr) {
-                console.log("running2");
-                $("body").css({"background": `url(${x[photoNum]}) no-repeat center center fixed`,
+                $("body, html").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
                 "-webkit-background-size": "cover",
                 "-moz-background-size": "cover",
                 "-o-background-size": "cover",
                 "background-size": "cover"
                 });
-
-                // $("body").css("background", "url(" + x[photoNum] + ")");
-            };
             photoNum += 1;
-            if (photoNum === x.length) photoNum = 0;
-        },whenWeLookin);
+            if (photoNum === bodyArr.length) photoNum = 0;
+        },40000);
+    };
+
+    //cycling through portfolio card images
+    function portfolioImgCycle () {
+
+        var photoNum = 0
+        setInterval(function() {
+
+        
+            $("#port-img2").attr("src", portArr[photoNum]);
+                    
+            $("#port-img1").attr("src", portArr[photoNum]);
+                
+            photoNum += 1;
+            if (photoNum === portArr.length) photoNum = 0;
+            },1000);
     };
 
     //pulses ring divs
@@ -148,8 +154,8 @@ $(function () {
 
     
     //cycling portfolio card images
-imageCyle(portArr);
-imageCyle(bodyArr);
+backGroundImgCyle();
+portfolioImgCycle();
 
 
 
