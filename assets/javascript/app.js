@@ -13,7 +13,6 @@ $(function () {
 
 
 $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
-$("#port-img2").attr("src", "assets/images/Tip-Calculator.PNG")
 
 
     // cycling through background images
@@ -33,19 +32,15 @@ $("#port-img2").attr("src", "assets/images/Tip-Calculator.PNG")
     };
 
     //cycling through portfolio card images
-    function portfolioImgCycle () {
-
+    function portfolioImgCycle() {
         var photoNum = 0
-        setInterval(function() {
-
-        
-            $("#port-img2").attr("src", portArr[photoNum]);
-                    
+        setInterval(function () {
+            
             $("#port-img1").attr("src", portArr[photoNum]);
-                
+        
             photoNum += 1;
             if (photoNum === portArr.length) photoNum = 0;
-            },1000);
+        }, 7000);
     };
 
     //pulses ring divs
