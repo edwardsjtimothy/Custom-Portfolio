@@ -73,8 +73,11 @@ body, html {
 .card {
   background-image: url("../images/darkness.png");
   color: white;
-  border: 2px solid #00ffff;
+  border: 2px solid #00ffff; 
+  transition: height 2s;
 }
+
+
 
 
 

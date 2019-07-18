@@ -147,8 +147,32 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         bpm = Math.floor(Math.random() * 10000) + 30000;
     }, bpm);
 
+    //enlarges card on mouse enter 
+
+    $(".card").hover(
+        function() {
+            $(".container").prepend(this);
+            $(this).animate({
+                textAlign: "center",
+                marginTop: "40",
+                height: "90%",
+                width: "90%",
+            });
+        }, 
+        function() {
+            $(this)
+            $(this).css({
+                "height": "initial",
+                "width": "initial",
+            });
+        },
+
+
+    );
+
+
     
-    //cycling portfolio card images
+    //cycling portfolio card images and background
 backGroundImgCyle();
 portfolioImgCycle();
 
