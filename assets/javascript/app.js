@@ -33,18 +33,6 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         },40000);
     };
 
-    //cycling through portfolio card images
-    function portfolioImgCycle() {
-        var photoNum = 0
-        setInterval(function () {
-            
-            $("#port-img1").attr("src", portArr[photoNum]);
-        
-            photoNum += 1;
-            if (photoNum === portArr.length) photoNum = 0;
-        }, 7000);
-    };
-
     //pulses ring divs
     function heartbeat() {
 
@@ -152,7 +140,6 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
     
     //cycling portfolio card images and background
 backGroundImgCyle();
-portfolioImgCycle();
 
 
 
