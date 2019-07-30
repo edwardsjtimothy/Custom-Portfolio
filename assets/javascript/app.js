@@ -149,6 +149,30 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         bpm = Math.floor(Math.random() * 10000) + 30000;
     }, bpm);
 
+    //enlarges card on mouse enter 
+
+    $(".card").hover(
+        
+        function() {
+            $(".card").not(this).hide("slow");
+            $(".card").not(this).parentsUntil(".row").hide("slow");
+            $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
+            // $(this).css("width", "900px");
+    
+            $(this).parent().animate({
+                height: "100%",
+                width: "900px",
+            });
+        }, 
+        function() {
+            $(".card").not(this).show("slow");
+            $(".card").not(this).parentsUntil(".row").show("slow");
+        },
+
+
+
+    );
+
     
     //cycling portfolio card images and background
 backGroundImgCyle();
