@@ -11,6 +11,8 @@ $(function () {
 
     var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
 
+    //variable used for card hover animations 
+    var selectedCard = 1;
 
 $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
@@ -146,30 +148,6 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         if (hover) heartbeat();
         bpm = Math.floor(Math.random() * 10000) + 30000;
     }, bpm);
-
-    //enlarges card on mouse enter 
-
-    $(".card").hover(
-        function() {
-            $(".container").prepend(this);
-            $(this).animate({
-                textAlign: "center",
-                marginTop: "40",
-                height: "90%",
-                width: "90%",
-            });
-        }, 
-        function() {
-            $(this)
-            $(this).css({
-                "height": "initial",
-                "width": "initial",
-            });
-        },
-
-
-    );
-
 
     
     //cycling portfolio card images and background
