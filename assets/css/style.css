@@ -60,23 +60,52 @@ body, html {
 }
 
 
+/* body styles */
 
 
-
-/* card styles */
-
-.check-it {
-  margin-top: 40px;
-
-
-}
-
-.card {
-  background-image: url("../images/darkness.png");
-  color: white;
+.info {
+  background: url("../images/darkness.png");
+  margin: 20px 10px 10px 0px; 
+  padding: 10px;
   border: 2px solid #00ffff; 
-  transition: height 2s;
+  color: whitesmoke;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: left;
 }
+
+.profile {
+  text-align: center;
+}
+
+.port-link {
+  border: 2px solid #ff3300;
+  height: 55px;
+  padding-top: 12px;
+}
+
+.port-link:hover {
+  border: 2px solid #00ffff;
+}
+
+
+/* resume styles */
+
+.resume-con {
+  background: url("../images/darkness.png");
+  margin: 20px 10px 10px 0px; 
+  padding: 10px;
+  border: 2px solid #00ffff; 
+  color: whitesmoke;
+  border-radius: 5px;
+
+}
+
+iframe {
+  width: 100%;
+  height: 900px;
+}
+
 
 
 
