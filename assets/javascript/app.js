@@ -51,14 +51,35 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
     function collapse() {
 
         var beat = 70
-        setInterval(function () {
+        var collapse = setInterval(function () {
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
-                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200).animate({opacity: "0.0"});
+                    $(this).animate({ borderWidth: "5px" }, 50).animate({ borderWidth: "2px" }, 50).animate({opacity: "0.0"});
                 }
             });
             beat -= 1;
+            if (beat <= -13) {
+                clearInterval(collapse);
+                $(".hero-pic").css("position","relative");
+                $(".hero-heading").css({
+                    "position":"relative",
+                    "white-space": "nowrap",
+                    "display": "inline-block"
+                });
+                $(".hero-pic").animate({
+                    right: "850px",
+                    bottom: "310px",
+                    height: "-=80px",
+                    width: "-=80px"
+                }, {queue: false});
+                $(".hero-heading").animate({
+                    right: "600px",
+                    bottom: "400px",
+                    height: "-=80px",
+                    width: "-=80px"
+                },{queue: false});
+            };
         }, 50);
     };
 
@@ -85,13 +106,6 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
             //increases z-index of name and button to ensure they layered on top of ring divs
             $("fade-btn").css("z-index", "2");
-
-            //stop for ring div generation interval
-            function stopWave() {
-                clearInterval(fadeIn);
-            };
-
-
 
             //running this function every one 0.1 seconds untill stopWave() is triggered
             var fadeIn = setInterval(function () {
@@ -133,7 +147,7 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
                 };
 
                 //stopping ring propagation after ripple reaches 2000
-                if (ripple >= 2300) stopWave();
+                if (ripple >= 2300) clearInterval(fadeIn);
             }, 100);
 
 
