@@ -48,6 +48,20 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         }, 50);
     };
 
+    function collapse() {
+
+        var beat = 70
+        setInterval(function () {
+
+            $(".pulse").each(function () {
+                if ($(this).data("pulse") === beat) {
+                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200).animate({opacity: "0.0"});
+                }
+            });
+            beat -= 1;
+        }, 50);
+    };
+
     //runs when profile photo is moused over 
     $(".hero-pic").mouseenter(function () {
 
@@ -119,7 +133,7 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
                 };
 
                 //stopping ring propagation after ripple reaches 2000
-                if (ripple >= 2000) stopWave();
+                if (ripple >= 2300) stopWave();
             }, 100);
 
 
@@ -139,27 +153,35 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
     //enlarges card on mouse enter 
 
-    $(".card").hover(
+    // $(".card").hover(
         
-        function() {
-            $(".card").not(this).hide("slow");
-            $(".card").not(this).parentsUntil(".row").hide("slow");
-            $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
-            // $(this).css("width", "900px");
+    //     function() {
+    //         $(".card").not(this).hide("slow");
+    //         $(".card").not(this).parentsUntil(".row").hide("slow");
+    //         $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
+    //         // $(this).css("width", "900px");
     
-            $(this).parent().animate({
-                height: "100%",
-                width: "900px",
-            });
-        }, 
-        function() {
-            $(".card").not(this).show("slow");
-            $(".card").not(this).parentsUntil(".row").show("slow");
-        },
+    //         $(this).parent().animate({
+    //             height: "100%",
+    //             width: "900px",
+    //         });
+    //     }, 
+    //     function() {
+    //         $(".card").not(this).show("slow");
+    //         $(".card").not(this).parentsUntil(".row").show("slow");
+    //     },
 
 
 
-    );
+    // );
+
+    $(".hire-me").click(function(){
+        console.log("Hire me");
+        $(".hero").animate({
+            height: "100%"
+        },500, collapse());
+        $(".bod-con").hide("fast");
+    });
 
     
     //cycling portfolio card images and background
