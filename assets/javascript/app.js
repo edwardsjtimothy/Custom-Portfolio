@@ -55,30 +55,16 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
-                    $(this).animate({ borderWidth: "5px" }, 50).animate({ borderWidth: "2px" }, 50).animate({opacity: "0.0"});
+                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200).animate({opacity: "0.0"});
                 }
             });
             beat -= 1;
-            if (beat <= -13) {
+            if (beat <= -8) {
                 clearInterval(collapse);
-                $(".hero-pic").css("position","relative");
-                $(".hero-heading").css({
-                    "position":"relative",
-                    "white-space": "nowrap",
-                    "display": "inline-block"
-                });
-                $(".hero-pic").animate({
-                    right: "850px",
-                    bottom: "310px",
-                    height: "-=80px",
-                    width: "-=80px"
-                }, {queue: false});
-                $(".hero-heading").animate({
-                    right: "600px",
-                    bottom: "400px",
-                    height: "-=80px",
-                    width: "-=80px"
-                },{queue: false});
+                $(".hero-pic").fadeOut(1000);
+                $(".hero-heading").fadeOut(1000);
+                
+                
             };
         }, 50);
     };
