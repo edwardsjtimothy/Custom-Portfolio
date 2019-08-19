@@ -59,6 +59,18 @@ body, html {
   z-index: 2;
 }
 
+.download {
+  border: 2px solid #ff3300;
+  padding-top: 12px;
+  position: fixed; 
+  left: 20px;
+  top: 20px;
+}
+
+.download:hover {
+  border: 2px solid #00ffff;
+}
+
 
 /* body styles */
 
@@ -91,6 +103,8 @@ body, html {
 
 /* resume styles */
 
+
+
 .resume-con {
   position: absolute;
   left: 15%;
@@ -102,7 +116,10 @@ body, html {
   border-radius: 5px;
   text-align: center;
   width: 70%;
-
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 20px 0px 20px 0px;
 }
 
 iframe {
