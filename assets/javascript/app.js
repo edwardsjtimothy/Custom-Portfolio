@@ -1,5 +1,5 @@
 $(function () {
-
+    $(".resume-con").hide();
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -63,6 +63,8 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
                 clearInterval(collapse);
                 $(".hero-pic").fadeOut(1000);
                 $(".hero-heading").fadeOut(1000);
+                $(".resume-con").show(1000);
+                $(".hire-me").fadeOut(1000);
                 
                 
             };

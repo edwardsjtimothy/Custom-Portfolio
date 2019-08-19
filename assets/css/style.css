@@ -92,12 +92,16 @@ body, html {
 /* resume styles */
 
 .resume-con {
+  position: absolute;
+  left: 15%;
   background: url("../images/darkness.png");
   margin: 20px 10px 10px 0px; 
   padding: 10px;
   border: 2px solid #00ffff; 
   color: whitesmoke;
   border-radius: 5px;
+  text-align: center;
+  width: 70%;
 
 }
 
