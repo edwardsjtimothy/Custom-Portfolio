@@ -59,18 +59,6 @@ body, html {
   z-index: 2;
 }
 
-.download {
-  border: 2px solid #ff3300;
-  padding-top: 12px;
-  position: fixed; 
-  left: 20px;
-  top: 20px;
-  z-index: 2;
-}
-
-.download:hover {
-  border: 2px solid #00ffff;
-}
 
 
 /* body styles */
@@ -104,8 +92,6 @@ body, html {
 
 /* resume styles */
 
-
-
 .resume-con { 
   background: url("../images/darkness.png");
   margin: 20px 10px 10px 0px; 
@@ -120,6 +106,23 @@ body, html {
   margin: 20px 0px 20px 0px;
 }
 
+.resume-con a {
+  color: #ff3300;
+}
+
+.resume-con a:hover {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.resume-con a:visited {
+  color: #00ffff;
+}
+
+.resume-con a:visited:hover {
+  color: whitesmoke;
+}
+
 .res-head *, .res-body * {
   margin-bottom: 2px;
 }
@@ -129,7 +132,7 @@ body, html {
 }
 
 .float-left {
- float: left;
+  float: left;
 }
 
 .float-right {
@@ -138,6 +141,26 @@ body, html {
 
 .clear {
   clear: left;
+}
+
+.res-btn {
+  border: 2px solid #ff3300;
+  padding-top: 12px;
+  position: fixed; 
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+}
+
+.res-btn:hover {
+  border: 2px solid #00ffff;
+}
+
+
+.back-btn {
+  position: fixed; 
+  left: 20px;
+  top: 90px;
 }
 
 
