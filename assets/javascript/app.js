@@ -1,5 +1,6 @@
 $(function () {
-
+    $(".resume-con").hide();
+    $(".download").hide();
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -48,6 +49,36 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         }, 50);
     };
 
+    function collapse() {
+
+        var beat = 70
+        var collapse = setInterval(function () {
+
+            $(".pulse").each(function () {
+                if ($(this).data("pulse") === beat) {
+                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200).animate({opacity: "0.0"});
+                }
+            });
+            beat -= 1;
+            if (beat <= -8) {
+                clearInterval(collapse);
+                
+                
+                $(".hero-pic").fadeOut(1000);
+                $(".hero-heading").fadeOut(1000);
+                $(".hire-me").fadeOut(1000);
+                $(".hero").animate({
+                    height: "0%"
+                },500,);
+        
+                $(".resume-con").show(1000);
+                $(".download").show(1000);
+                
+                
+            }; 
+        }, 50);
+    };
+
     //runs when profile photo is moused over 
     $(".hero-pic").mouseenter(function () {
 
@@ -71,13 +102,6 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
             //increases z-index of name and button to ensure they layered on top of ring divs
             $("fade-btn").css("z-index", "2");
-
-            //stop for ring div generation interval
-            function stopWave() {
-                clearInterval(fadeIn);
-            };
-
-
 
             //running this function every one 0.1 seconds untill stopWave() is triggered
             var fadeIn = setInterval(function () {
@@ -119,7 +143,7 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
                 };
 
                 //stopping ring propagation after ripple reaches 2000
-                if (ripple >= 2000) stopWave();
+                if (ripple >= 2300) clearInterval(fadeIn);
             }, 100);
 
 
@@ -136,6 +160,40 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         if (hover) heartbeat();
         bpm = Math.floor(Math.random() * 10000) + 30000;
     }, bpm);
+
+    //enlarges card on mouse enter 
+
+    // $(".card").hover(
+        
+    //     function() {
+    //         $(".card").not(this).hide("slow");
+    //         $(".card").not(this).parentsUntil(".row").hide("slow");
+    //         $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
+    //         // $(this).css("width", "900px");
+    
+    //         $(this).parent().animate({
+    //             height: "100%",
+    //             width: "900px",
+    //         });
+    //     }, 
+    //     function() {
+    //         $(".card").not(this).show("slow");
+    //         $(".card").not(this).parentsUntil(".row").show("slow");
+    //     },
+
+
+
+    // );
+
+    $(".hire-me").click(function(){
+        console.log("Hire me");
+        $(".bod-con").hide("fast");
+        $(".hero").animate({
+            height: "100%",
+        },500, collapse());
+       
+        
+    });
 
     
     //cycling portfolio card images and background
