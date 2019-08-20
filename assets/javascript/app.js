@@ -1,37 +1,44 @@
 $(function () {
+    
+    //elements hidden on page load
     $(".resume-con").hide();
     $(".res-btn").hide();
     $(".back-btn").hide();
+
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
     //varible to establish initial wait period before running random pulse function.
     var bpm = 10000;
 
-    //array of images for portfolio card
-    var portArr = ["assets/images/Tip-Calculator.PNG", "assets/images/Tic-Tac-Toe.PNG", "assets/images/LotR-Trivia.PNG", "assets/images/Gif-Generator.PNG"];
-
+    //array of images for background
     var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
 
     //variable used for card hover animations 
     var selectedCard = 1;
 
-$("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
-
-
     // cycling through background images
     function backGroundImgCyle(){
 
-        var photoNum = 0;
+        var photoNum = Math.floor(Math.random() * 11);
+
+        $("body, html").css({
+            "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
+            "-webkit-background-size": "cover",
+            "-moz-background-size": "cover",
+            "-o-background-size": "cover",
+            "background-size": "cover"
+        });
+
         setInterval(function() {
+            var photoNum = Math.floor(Math.random() * 10);
+
                 $("body, html").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
                 "-webkit-background-size": "cover",
                 "-moz-background-size": "cover",
                 "-o-background-size": "cover",
                 "background-size": "cover"
                 });
-            photoNum += 1;
-            if (photoNum === bodyArr.length) photoNum = 0;
         },40000);
     };
 
