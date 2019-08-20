@@ -236,7 +236,6 @@ $(function () {
         },500, newWave());
     });
 
-    
     //cycling background
 backGroundImgCyle();
 
