@@ -62,7 +62,7 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
             beat -= 1;
             if (beat <= -8) {
                 clearInterval(collapse);
-                $(".bod-con").hide("fast");
+                
                 
                 $(".hero-pic").fadeOut(1000);
                 $(".hero-heading").fadeOut(1000);
@@ -187,8 +187,9 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
     $(".hire-me").click(function(){
         console.log("Hire me");
+        $(".bod-con").hide("fast");
         $(".hero").animate({
-            height: "100%"
+            height: "100%",
         },500, collapse());
        
         

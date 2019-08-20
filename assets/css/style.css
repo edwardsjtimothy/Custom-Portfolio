@@ -106,9 +106,7 @@ body, html {
 
 
 
-.resume-con {
-  position: absolute;
-  left: 15%;
+.resume-con { 
   background: url("../images/darkness.png");
   margin: 20px 10px 10px 0px; 
   padding: 10px;
@@ -130,9 +128,18 @@ body, html {
   text-align: left;
 }
 
-.indent {
-  text-indent: 20px;
+.float-left {
+ float: left;
 }
+
+.float-right {
+  float: right;
+}
+
+.clear {
+  clear: left;
+}
+
 
 
 
