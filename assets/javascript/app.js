@@ -1,6 +1,7 @@
 $(function () {
     $(".resume-con").hide();
-    $(".download").hide();
+    $(".res-btn").hide();
+    $(".back-btn").hide();
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -49,6 +50,7 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
         }, 50);
     };
 
+    //reverses wave and hides hero content
     function collapse() {
 
         var beat = 70
@@ -56,27 +58,53 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
-                    $(this).animate({ borderWidth: "5px" }, 200).animate({ borderWidth: "2px" }, 200).animate({opacity: "0.0"});
+                    $(this).animate({ borderWidth: "5px" }, 100).animate({ borderWidth: "2px" }, 100).animate({opacity: "0.0"});
                 }
             });
             beat -= 1;
-            if (beat <= -8) {
+            if (beat <= -6) {
                 clearInterval(collapse);
                 
                 
-                $(".hero-pic").fadeOut(1000);
-                $(".hero-heading").fadeOut(1000);
-                $(".hire-me").fadeOut(1000);
+                $(".hero-pic").fadeOut(500);
+                $(".hero-heading").fadeOut(500);
+                $(".hire-me").fadeOut(500);
                 $(".hero").animate({
                     height: "0%"
                 },500,);
         
                 $(".resume-con").show(1000);
-                $(".download").show(1000);
+                $(".res-btn").show(1000);
+                $(".back-btn").show(1000);
                 
                 
             }; 
-        }, 50);
+        }, 30);
+    };
+
+    function newWave() {
+        
+        $(".hero-pic").fadeIn(1000);
+        $(".hero-heading").fadeIn(1000);
+        $(".hire-me").fadeIn(1000);
+
+        var beat = 0
+        setInterval(function () {
+
+            $(".pulse").each(function () {
+                if ($(this).data("pulse") === beat) {
+                    $(this).animate({opacity: "1.0"}, 100).animate({ borderWidth: "5px" }, 100).animate({ borderWidth: "2px" }, 100);
+                }
+            });
+            beat += 1;
+            if (beat >= 55) {
+                clearInterval(collapse);
+                $(".bod-con").show("fast");
+                $(".hero").animate({
+                    height: "50%"
+                },500,);
+            }; 
+        }, 30);
     };
 
     //runs when profile photo is moused over 
@@ -185,18 +213,24 @@ $("#port-img1").attr("src", "assets/images/Gif-Generator.PNG");
 
     // );
 
+    //click function for hire-me button
     $(".hire-me").click(function(){
-        console.log("Hire me");
         $(".bod-con").hide("fast");
         $(".hero").animate({
             height: "100%",
         },500, collapse());
-       
-        
+    });
+
+    //click function for back button
+    $(".back-btn").click(function(){
+        $(".res-wrap").hide("fast");
+        $(".hero").animate({
+            height: "100%",
+        },500, newWave());
     });
 
     
-    //cycling portfolio card images and background
+    //cycling background
 backGroundImgCyle();
 
 
