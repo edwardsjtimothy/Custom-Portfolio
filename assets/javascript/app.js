@@ -236,7 +236,11 @@ $(function () {
         },500, newWave());
     });
 
-    
+    $(".dropdown").click(function(event) {
+        event.preventDefault();
+
+        console.log("dropdown click");
+    })
     //cycling background
 backGroundImgCyle();
 
