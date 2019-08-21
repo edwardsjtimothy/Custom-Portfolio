@@ -20,8 +20,7 @@ $(function () {
     // cycling through background images
     function backGroundImgCyle(){
 
-        var photoNum = Math.floor(Math.random() * 11);
-
+        var photoNum = Math.floor(Math.random() * 10);
         $("body, html").css({
             "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
             "-webkit-background-size": "cover",
@@ -40,6 +39,15 @@ $(function () {
                 "background-size": "cover"
                 });
         },40000);
+    };
+
+    function animateShot() {
+        $(".animate-left").animate({
+            left: "-100%"
+        }, {duration: 2000, queue: false});
+        $(".animate-right").animate({
+            left: "100%"
+        }, {duration: 2000, queue: false});
     };
 
     //pulses ring divs
@@ -238,6 +246,8 @@ $(function () {
 
     //cycling background
 backGroundImgCyle();
+
+animateShot();
 
 
 
