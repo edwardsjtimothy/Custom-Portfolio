@@ -41,15 +41,6 @@ $(function () {
         },40000);
     };
 
-    function animateShot() {
-        $(".animate-left").animate({
-            left: "-100%"
-        }, {duration: 2000, queue: false});
-        $(".animate-right").animate({
-            left: "100%"
-        }, {duration: 2000, queue: false});
-    };
-
     //pulses ring divs
     function heartbeat() {
 
@@ -80,12 +71,12 @@ $(function () {
             if (beat <= -6) {
                 clearInterval(collapse);
                 
-                
                 $(".hero-pic").fadeOut(500);
                 $(".hero-heading").fadeOut(500);
                 $(".hire-me").fadeOut(500);
                 $(".hero").animate({
-                    height: "0%"
+                    height: "0%",
+                    borderBottom: "hidden",
                 },500,);
         
                 $(".resume-con").show(1000);
@@ -115,8 +106,10 @@ $(function () {
             if (beat >= 55) {
                 clearInterval(collapse);
                 $(".bod-con").show("fast");
+                $(".hero-border").show();
                 $(".hero").animate({
-                    height: "50%"
+                    height: "50%",
+                    borderBottom: "2px solid #ff3300"
                 },500,);
             }; 
         }, 30);
@@ -231,14 +224,17 @@ $(function () {
     //click function for hire-me button
     $(".hire-me").click(function(){
         $(".bod-con").hide("fast");
+        $(".hero-border").hide("fast");
+        $(".hero").css("border-bottom", "none");
         $(".hero").animate({
-            height: "100%",
+            height: "100%"
         },500, collapse());
     });
 
     //click function for back button
     $(".back-btn").click(function(){
         $(".res-wrap").hide("fast");
+        $(".hero").css("border-bottom", "2px solid #ff3300");
         $(".hero").animate({
             height: "100%",
         },500, newWave());
@@ -246,8 +242,6 @@ $(function () {
 
     //cycling background
 backGroundImgCyle();
-
-animateShot();
 
 
 
