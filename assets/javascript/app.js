@@ -221,6 +221,8 @@ $(function () {
 
     // );
 
+    
+
     //click function for hire-me button
     $(".hire-me").click(function(){
         $(".bod-con").hide("fast");
