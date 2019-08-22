@@ -16,8 +16,22 @@ body, html {
     height: 50%;
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid #ff3300;
+    /* border-bottom-left-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%; */
   }
   
+  .hero-border {
+    background-color: #00ffff;
+    width:100%;
+    height: 5px;
+    border-top: 2px solid #ff3300;
+    position: absolute;
+    bottom: 0px;
+    z-index: 100;
+    text-align: center
+  }
+
   .hero-content {
     text-align: center;
     position: absolute;
