@@ -4,7 +4,7 @@ $(function () {
     $(".resume-con").hide();
     $(".res-btn").hide();
     $(".back-btn").hide();
-
+    let hire = 0;
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -58,10 +58,9 @@ $(function () {
 
     //reverses wave and hides hero content
     function collapse() {
-
         var beat = 70
         var collapse = setInterval(function () {
-
+            
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
                     $(this).animate({ borderWidth: "5px" }, 100).animate({ borderWidth: "2px" }, 100).animate({opacity: "0.0"});
@@ -70,6 +69,7 @@ $(function () {
             beat -= 1;
             if (beat <= -6) {
                 clearInterval(collapse);
+                console.log("collapse running", beat);
                 
                 $(".hero-pic").fadeOut(500);
                 $(".hero-heading").fadeOut(500);
@@ -77,7 +77,7 @@ $(function () {
                 $(".hero").animate({
                     height: "0%",
                     borderBottom: "hidden",
-                },500,);
+                },500);
         
                 $(".resume-con").show(1000);
                 $(".res-btn").show(1000);
@@ -95,7 +95,7 @@ $(function () {
         $(".hire-me").fadeIn(1000);
 
         var beat = 0
-        setInterval(function () {
+        var newWaveAnim = setInterval(function () {
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
@@ -104,13 +104,13 @@ $(function () {
             });
             beat += 1;
             if (beat >= 55) {
-                clearInterval(collapse);
+                clearInterval(newWaveAnim);
                 $(".bod-con").show("fast");
                 $(".hero-border").show();
                 $(".hero").animate({
                     height: "50%",
                     borderBottom: "2px solid #ff3300"
-                },500,);
+                },500);
             }; 
         }, 30);
     };
@@ -231,6 +231,8 @@ $(function () {
         $(".hero").animate({
             height: "100%"
         },500, collapse());
+        hire++;
+        console.log("hire-me running...", hire)
     });
 
     //click function for back button
