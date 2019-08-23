@@ -18,9 +18,10 @@ $(function () {
     // var selectedCard = 1;
 
     function hoverCheck() {
-        setInterval(function(){
+       var modalCount = setInterval(function(){
             if (!hover) {
                 $(".modal").modal();
+                clearInterval(modalCount);
             };
       },30000);
     };
