@@ -69,7 +69,6 @@ $(function () {
             beat -= 1;
             if (beat <= -6) {
                 clearInterval(collapse);
-                console.log("collapse running", beat);
                 
                 $(".hero-pic").fadeOut(500);
                 $(".hero-heading").fadeOut(500);
@@ -79,6 +78,7 @@ $(function () {
                     borderBottom: "hidden",
                 },500);
         
+                $(".res-wrap").show(1000);
                 $(".resume-con").show(1000);
                 $(".res-btn").show(1000);
                 $(".back-btn").show(1000);
@@ -231,8 +231,6 @@ $(function () {
         $(".hero").animate({
             height: "100%"
         },500, collapse());
-        hire++;
-        console.log("hire-me running...", hire)
     });
 
     //click function for back button
