@@ -20,13 +20,9 @@ $(function () {
     function hoverCheck() {
         setInterval(function(){
             if (!hover) {
-                $(".modal").modal({
-                    focus: true,
-                    show: true,
-                });
-            $(".hero").css("width", "")
+                $(".modal").modal();
             };
-      },2000);
+      },30000);
     };
 
     // cycling through background images
