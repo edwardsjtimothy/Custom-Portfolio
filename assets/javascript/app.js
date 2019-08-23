@@ -4,7 +4,7 @@ $(function () {
     $(".resume-con").hide();
     $(".res-btn").hide();
     $(".back-btn").hide();
-    let hire = 0;
+
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -17,6 +17,7 @@ $(function () {
     // //variable used for card hover animations 
     // var selectedCard = 1;
 
+    //checking if hero photo has been moused over
     function hoverCheck() {
        var modalCount = setInterval(function(){
             if (!hover) {
@@ -208,28 +209,7 @@ $(function () {
 
     //enlarges card on mouse enter 
 
-    // $(".card").hover(
-        
-    //     function() {
-    //         $(".card").not(this).hide("slow");
-    //         $(".card").not(this).parentsUntil(".row").hide("slow");
-    //         $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
-    //         // $(this).css("width", "900px");
     
-    //         $(this).parent().animate({
-    //             height: "100%",
-    //             width: "900px",
-    //         });
-    //     }, 
-    //     function() {
-    //         $(".card").not(this).show("slow");
-    //         $(".card").not(this).parentsUntil(".row").show("slow");
-    //     },
-
-
-
-    // );
-
     
 
     //click function for hire-me button
