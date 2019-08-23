@@ -10,7 +10,7 @@ body, html {
     -o-background-size: cover;
     background-size: cover;
   }
-  
+
   .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/darkness.png");
     height: 50%;
@@ -73,8 +73,6 @@ body, html {
   z-index: 2;
 }
 
-
-
 /* body styles */
 
 
@@ -107,6 +105,25 @@ body, html {
   text-align: center;
 }
 
+/* modal styles */
+
+.modal-content {
+  text-align:center;
+  color: whitesmoke;
+  border: 2px solid #00ffff;
+}
+
+.modal-btn {
+  position: relative;
+  left: 40%;
+  width: 90px;
+  margin-bottom: 35px;
+  padding-bottom: 11px;
+}
+
+.modal-open {
+padding-right: 17px;
+}
 
 
 /* resume styles */

@@ -14,14 +14,22 @@ $(function () {
     //array of images for background
     var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
 
-    //variable used for card hover animations 
-    var selectedCard = 1;
+    // //variable used for card hover animations 
+    // var selectedCard = 1;
+
+    function hoverCheck() {
+        setInterval(function(){
+            if (!hover) {
+                $(".modal").modal();
+            };
+      },30000);
+    };
 
     // cycling through background images
     function backGroundImgCyle(){
 
         var photoNum = Math.floor(Math.random() * 10);
-        $("body, html").css({
+        $("body, html, .modal-content").css({
             "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
             "-webkit-background-size": "cover",
             "-moz-background-size": "cover",
@@ -32,7 +40,7 @@ $(function () {
         setInterval(function() {
             var photoNum = Math.floor(Math.random() * 10);
 
-                $("body, html").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
+                $("body, html, .modal-content").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
                 "-webkit-background-size": "cover",
                 "-moz-background-size": "cover",
                 "-o-background-size": "cover",
@@ -244,6 +252,7 @@ $(function () {
 
     //cycling background
 backGroundImgCyle();
+hoverCheck();
 
 
 
