@@ -12,10 +12,7 @@ $(function () {
     var bpm = 10000;
 
     //array of images for background
-    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
-
-    // //variable used for card hover animations 
-    // var selectedCard = 1;
+    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
 
     //checking if hero photo has been moused over
     function hoverCheck() {
@@ -209,7 +206,6 @@ $(function () {
 
     //enlarges card on mouse enter 
 
-    
     
 
     //click function for hire-me button
