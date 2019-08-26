@@ -4,7 +4,7 @@ $(function () {
     $(".resume-con").hide();
     $(".res-btn").hide();
     $(".back-btn").hide();
-    let hire = 0;
+
     //varible to specify whether or not prof pic has been moused over
     var hover = false;
 
@@ -12,11 +12,9 @@ $(function () {
     var bpm = 10000;
 
     //array of images for background
-    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];
+    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
 
-    // //variable used for card hover animations 
-    // var selectedCard = 1;
-
+    //checking if hero photo has been moused over
     function hoverCheck() {
        var modalCount = setInterval(function(){
             if (!hover) {
@@ -207,28 +205,6 @@ $(function () {
     }, bpm);
 
     //enlarges card on mouse enter 
-
-    // $(".card").hover(
-        
-    //     function() {
-    //         $(".card").not(this).hide("slow");
-    //         $(".card").not(this).parentsUntil(".row").hide("slow");
-    //         $(".card").filter(":not(:animated)").parent().animate({textAlign:"center"});
-    //         // $(this).css("width", "900px");
-    
-    //         $(this).parent().animate({
-    //             height: "100%",
-    //             width: "900px",
-    //         });
-    //     }, 
-    //     function() {
-    //         $(".card").not(this).show("slow");
-    //         $(".card").not(this).parentsUntil(".row").show("slow");
-    //     },
-
-
-
-    // );
 
     
 
