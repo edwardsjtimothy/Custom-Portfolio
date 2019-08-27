@@ -26,8 +26,9 @@ $(function () {
 
     // cycling through background images
     function backGroundImgCyle(){
-
+        
         var photoNum = Math.floor(Math.random() * 10);
+        
         $("body, html, .modal-content").css({
             "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
             "-webkit-background-size": "cover",
