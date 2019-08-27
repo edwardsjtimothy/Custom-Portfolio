@@ -15,14 +15,14 @@ $(function () {
     var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
 
     //checking if hero photo has been moused over
+
     function hoverCheck() {
-       var modalCount = setInterval(function(){
-            if (!hover) {
-                $(".modal").modal();
-                clearInterval(modalCount);
-            };
-      },30000);
-    };
+           setTimeout(function(){
+                if (!hover) {
+                    $(".modal").modal();
+                };
+          },30000);
+        };
 
     // cycling through background images
     function backGroundImgCyle(){
