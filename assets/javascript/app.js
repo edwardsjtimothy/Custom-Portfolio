@@ -6,13 +6,13 @@ $(function () {
     $(".back-btn").hide();
 
     //varible to specify whether or not prof pic has been moused over
-    var hover = false;
+    let hover = false;
 
     //varible to establish initial wait period before running random pulse function.
-    var bpm = 10000;
+    let bpm = 10000;
 
     //array of images for background
-    var bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
+    let bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
 
     //checking if hero photo has been moused over
 
@@ -27,7 +27,7 @@ $(function () {
     // cycling through background images
     function backGroundImgCyle(){
 
-        var photoNum = Math.floor(Math.random() * 10);
+        let photoNum = Math.floor(Math.random() * 10);
         $("body, html, .modal-content").css({
             "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
             "-webkit-background-size": "cover",
@@ -37,7 +37,7 @@ $(function () {
         });
 
         setInterval(function() {
-            var photoNum = Math.floor(Math.random() * 10);
+            let photoNum = Math.floor(Math.random() * 10);
 
                 $("body, html, .modal-content").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
                 "-webkit-background-size": "cover",
@@ -51,7 +51,7 @@ $(function () {
     //pulses ring divs
     function heartbeat() {
 
-        var beat = 0
+        let beat = 0
         setInterval(function () {
 
             $(".pulse").each(function () {
@@ -65,8 +65,8 @@ $(function () {
 
     //reverses wave and hides hero content
     function collapse() {
-        var beat = 70
-        var collapse = setInterval(function () {
+        let beat = 70
+        let collapse = setInterval(function () {
             
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
@@ -101,8 +101,8 @@ $(function () {
         $(".hero-heading").fadeIn(1000);
         $(".hire-me").fadeIn(1000);
 
-        var beat = 0
-        var newWaveAnim = setInterval(function () {
+        let beat = 0
+        let newWaveAnim = setInterval(function () {
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
@@ -126,7 +126,9 @@ $(function () {
     $(".hero-pic").mouseenter(function () {
 
         hover = true;
+
         //enlarges photo and changes border color
+
         $(".hero-pic").css({
             "border": "2px solid #ff3300",
             "height": "240px",
@@ -136,18 +138,18 @@ $(function () {
         function wave() {
 
             //variables to determining diameter and position of first generated ring div
-            var ripple = 280;
-            var pos = -20;
-            var color = "#00ffff";
+            let ripple = 280;
+            let pos = -20;
+            let color = "#00ffff";
 
             //variable used to give each ring div a unique number 
-            var pulse = 0;
+            let pulse = 0;
 
             //increases z-index of name and button to ensure they layered on top of ring divs
             $("fade-btn").css("z-index", "2");
 
             //running this function every one 0.1 seconds untill stopWave() is triggered
-            var fadeIn = setInterval(function () {
+            let fadeIn = setInterval(function () {
 
                 //alternating color of propagating rings
                 for (i = 0; i < 2; i++) {
@@ -158,7 +160,7 @@ $(function () {
                     };
 
                     //generating ring divs
-                    var wave = $("<div>");
+                    let wave = $("<div>");
                     wave.addClass("pulse")
                     wave.data("pulse", pulse);
                     wave.css({
