@@ -66,7 +66,7 @@ $(function () {
     //reverses wave and hides hero content
     function collapse() {
         let beat = 70
-        let collapse = setInterval(function () {
+        const collapse = setInterval(function () {
             
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
@@ -102,7 +102,7 @@ $(function () {
         $(".hire-me").fadeIn(1000);
 
         let beat = 0
-        let newWaveAnim = setInterval(function () {
+        const newWaveAnim = setInterval(function () {
 
             $(".pulse").each(function () {
                 if ($(this).data("pulse") === beat) {
