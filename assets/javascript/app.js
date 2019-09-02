@@ -16,7 +16,7 @@ $(function () {
 
     //checking if hero photo has been moused over
 
-    function hoverCheck() {
+    const hoverCheck =()=> {
            setTimeout(function(){
                 if (!hover) {
                     $(".modal").modal();
@@ -25,7 +25,7 @@ $(function () {
         };
 
     // cycling through background images
-    function backGroundImgCyle() {
+    const backGroundImgCyle =()=> {
 
         let photoNum = Math.floor(Math.random() * 10);
 
@@ -50,7 +50,7 @@ $(function () {
     };
 
     //pulses ring divs
-    function heartbeat() {
+    const heartbeat =()=> {
 
         let beat = 0
         setInterval(function () {
@@ -65,7 +65,7 @@ $(function () {
     };
 
     //reverses wave and hides hero content
-    function collapse() {
+    const collapse =()=> {
         let beat = 70
         const collapse = setInterval(function () {
             
@@ -96,7 +96,7 @@ $(function () {
         }, 30);
     };
 
-    function newWave() {
+    const newWave =()=> {
         
         $(".hero-pic").fadeIn(1000);
         $(".hero-heading").fadeIn(1000);
@@ -124,7 +124,7 @@ $(function () {
     };
 
     //runs when profile photo is moused over 
-    $(".hero-pic").mouseenter(function () {
+    $(".hero-pic").mouseenter(()=> {
 
         hover = true;
 
