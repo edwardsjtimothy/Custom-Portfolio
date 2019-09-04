@@ -234,5 +234,4 @@ $(function () {
 backGroundImgCyle();
 hoverCheck();
 
-
 });
