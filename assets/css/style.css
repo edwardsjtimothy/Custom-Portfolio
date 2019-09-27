@@ -167,18 +167,6 @@ padding-right: 17px;
   text-align: left;
 }
 
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.clear {
-  clear: left;
-}
-
 .res-btn {
   border: 2px solid #ff3300;
   padding-top: 12px;
