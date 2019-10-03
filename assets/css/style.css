@@ -180,6 +180,17 @@ padding-right: 17px;
   border: 2px solid #00ffff;
 }
 
+.float-left {	
+  float: left;	
+}	
+
+.float-right {	
+  float: right;	
+}	
+
+.clear {	
+  clear: left;	
+}
 
 .back-btn {
   position: fixed; 
