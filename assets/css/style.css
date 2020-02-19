@@ -17,8 +17,6 @@ body, html {
     position: relative;
     overflow: hidden;
     border-bottom: 2px solid #ff3300;
-    /* border-bottom-left-radius: 50% 50%;
-    border-bottom-right-radius: 50% 50%; */
   }
   
   .hero-border {
