@@ -1,9 +1,34 @@
 $(function () {
+
+    const cards = require("./cards");
     
     //elements hidden on page load
     $(".resume-con").hide();
     $(".res-btn").hide();
     $(".back-btn").hide();
+
+    //generates portfolio cards
+    const cardGen =()=> {
+        for()
+        let rowDiv = $("<div>").addClass("row profile");
+        let colDiv = $("<div>").addClass("col-12 col-sm-12 col-md-6 col-lg-4 check-it");
+        let cardDiv = $("<div>").addClass("card info").css("width", "18rem;")
+        let img = $("<img>").attr("src","#").addClass("card-img-top")
+        let cardBody = $("<div>").addClass("card-body");
+        let cardHead = $("<h5>").addClass("card-title").text(`${}`);
+        let cardPara = $("<p>").addClass("card-text").text(`${}`);
+        let linkOne = $("<a>").attr({"target": "_blank", "href": `${}`}).addClass("btn btn-dark port-link").text("The App");
+        let linkTwo = $("<a>").attr({"target": "_blank", "href": `${}`}).addClass("btn btn-dark port-link").text("The Repo");
+
+        rowDiv.append(colDiv);
+        colDiv.append(cardDiv);
+        cardDiv.append(img);
+        cardBody.append(cardHead, cardPara, linkOne, linkTwo)
+        cardDiv.append(cardBody);
+
+
+
+    }
 
     //varible to specify whether or not prof pic has been moused over
     let hover = false;
