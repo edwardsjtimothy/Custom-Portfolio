@@ -10,15 +10,15 @@ $(function () {
     $(".back-btn").hide();
 
     let cards = [
-        {port1: [
+        {port0: [
             {title: "Gif Generator"},
             {para: "This app uses the Giphy API to generate 10 gifs based on whichever button is clicked. The user can also add their own buttons. Built using Javascript, JQuery, CSS, and Bootstrap."},
+            {img: "assets/images/Gif-Generator.PNG"},
             {linkOne: "https://edwardsjtimothy.github.io/Gif-Generator/"},
             {linkTwo: "https://github.com/edwardsjtimothy/Gif-Generator"}
         ]},
     ];
     
-
     //generates portfolio cards
     const cardGen = () => {
         let rowOrNot = 0;
@@ -30,12 +30,12 @@ $(function () {
             let rowDiv = $("<div>").addClass(`row profile${rowNum}`);
             let colDiv = $("<div>").addClass("col-12 col-sm-12 col-md-6 col-lg-4 check-it");
             let cardDiv = $("<div>").addClass("card info").css("width", "18rem;")
-            let img = $("<img>").attr("src", "#").addClass("card-img-top")
+            let img = $("<img>").attr("src", `${cards[i].port0[2].img}`).addClass("card-img-top")
             let cardBody = $("<div>").addClass("card-body");
-            let cardHead = $("<h5>").addClass("card-title").text(`${cards[i][0]}`);
-            let cardPara = $("<p>").addClass("card-text").text(`${cards[i][1]}`);
-            let linkOne = $("<a>").attr({ "target": "_blank", "href": `${cards[i][2]}` }).addClass("btn btn-dark port-link").text("The App");
-            let linkTwo = $("<a>").attr({ "target": "_blank", "href": `${cards[i][3]}` }).addClass("btn btn-dark port-link").text("The Repo");
+            let cardHead = $("<h5>").addClass("card-title").text(`${cards[i].port0[0].title}`);
+            let cardPara = $("<p>").addClass("card-text").text(`${cards[i].port0[1].para}`);
+            let linkOne = $("<a>").attr({ "target": "_blank", "href": `${cards[i].port0[3].linkOne}` }).addClass("btn btn-dark port-link").text("The App");
+            let linkTwo = $("<a>").attr({ "target": "_blank", "href": `${cards[i].port0[4].linkTwo}` }).addClass("btn btn-dark port-link").text("The Repo");
 
             rowDiv.append(colDiv);
             colDiv.append(cardDiv);
@@ -46,6 +46,8 @@ $(function () {
 
         }
     }
+
+    cardGen();
 
     //variable to specify whether or not prof pic has been moused over
     let hover = false;
