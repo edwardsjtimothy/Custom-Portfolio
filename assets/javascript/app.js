@@ -10,7 +10,7 @@ $(function () {
             { title: "Astronomican" },
             { para: "Full Stack React application to track victory and defeat in games of Warhammer 40000. Efforts to fully deploy ongoing. Built with React, Node.js, Express,Passport.js, and Bootstrap." },
             { img: "assets/images/Astronomican.PNG" },
-            { linkOne: "" },
+            { linkOne: "https://astronomican.herokuapp.com/" },
             { linkTwo: "https://github.com/edwardsjtimothy/administratum-rex.git" }
         ],
         [
