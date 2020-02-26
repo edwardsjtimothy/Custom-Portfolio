@@ -14,6 +14,41 @@ $(function () {
             { linkTwo: "https://github.com/edwardsjtimothy/administratum-rex.git" }
         ],
         [
+            { title: "DevBlog" },
+            { para: "Full Stack blog application built in Python/Django and Postgresql. Deployed on Heroku with help from AWS S3 Buckets. Create and account and give it a try!" },
+            { img: "assets/images/django-blog.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/MemoryMadness/"},
+            { linkTwo: "https://github.com/edwardsjtimothy/MemoryMadness.git"}
+        ],
+        [
+            { title: "Memory Madness" },
+            { para: "Try not to click each photo more than once or the game will reset. Built using Javascript, React, CSS, and Bootstrap." },
+            { img: "assets/images/memory-madness.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/MemoryMadness/"},
+            { linkTwo: "https://github.com/edwardsjtimothy/MemoryMadness.git"}
+        ],
+        [
+            { title: "LotR Trivia" },
+            { para: "Test you knowledge of Middle-earth with this simple Lord of the Rings Quiz. Try to beat the clock! Impress your family and friends! Built using Javascript, JQuery, CSS, and Bootstrap." },
+            { img: "assets/images/LotR-Trivia.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/TriviaGame/"},
+            { linkTwo: "https://github.com/edwardsjtimothy/TriviaGame"}
+        ],
+        [
+            { title: "Songs, Bands, and Movies" },
+            { para: "A backend app that allows the user to query several APIs via the terminal and process.argv for information on the specified song, band, or movie. Built using Node.js, Express, and Javascript." },
+            { img: "assets/images/Bands-in-Town.PNG" },
+            { linkOne: "" },
+            { linkTwo: "https://github.com/edwardsjtimothy/Liri" }
+        ],
+        [
+            { title: "Tip Calculator" },
+            { para: "Mental math can be a bit of a bear. This app allows you quickly calculate your desired tip and split the amount between multiple parties. Built using Javascript, JQuery, CSS, and Bootstrap." },
+            { img: "assets/images/Tip-Calculator.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/Tip-Calculator/" },
+            { linkTwo: "https://github.com/edwardsjtimothy/Tip-Calculator" }
+        ],
+        [
             { title: "Online Marketplace" },
             { para: "A backend app that simulates the basic functionality of an online marketplace. The user can access inventory via terminal and place an order. The inventory is then updated and a total cost is provided. Built using Node.js, Express, Javascript, and MySQL." },
             { img: "assets/images/bamazon.png" },
@@ -39,9 +74,7 @@ $(function () {
 
     //generates portfolio cards
     const cardGen = () => {
-        let rowOrNot = 0;
-        let rowNum = 1;
-        let rowDiv = $("<div>").addClass(`row profile${rowNum}`);
+        let rowDiv = $("<div>").addClass("row profile");
         for (i = 0; i < cards.length; i++) {
             let colDiv = $("<div>").addClass("col-12 col-sm-12 col-md-6 col-lg-4 check-it");
             let cardDiv = $("<div>").addClass("card info").css("width", "18rem;")
@@ -62,11 +95,6 @@ $(function () {
             cardBody.append(cardHead, cardPara, linkOne, linkTwo)
             cardDiv.append(cardBody);
             $(".bod-con").append(rowDiv)
-            rowOrNot++
-            if (rowOrNot === 2) {
-                rowOrNot = 0;
-                rowNum++
-            }
         }
     }
 
