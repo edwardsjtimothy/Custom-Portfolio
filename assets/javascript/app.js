@@ -6,20 +6,35 @@ $(function () {
     $(".back-btn").hide();
 
     let cards = [
-         [
-            {title: "Gif Generator"},
-            {para: "This app uses the Giphy API to generate 10 gifs based on whichever button is clicked. The user can also add their own buttons. Built using Javascript, JQuery, CSS, and Bootstrap."},
-            {img: "assets/images/Gif-Generator.PNG"},
-            {linkOne: "https://edwardsjtimothy.github.io/Gif-Generator/"},
-            {linkTwo: "https://github.com/edwardsjtimothy/Gif-Generator"}
+        [
+            { title: "Astronomican" },
+            { para: "Full Stack React application to track victory and defeat in games of Warhammer 40000. Efforts to fully deploy ongoing. Built with React, Node.js, Express,Passport.js, and Bootstrap." },
+            { img: "assets/images/Astronomican.PNG" },
+            { linkOne: "" },
+            { linkTwo: "https://github.com/edwardsjtimothy/administratum-rex.git" }
         ],
         [
-            {title: "Tic Tac Toe"},
-            {para: "Have you ever felt that you needed to play Tic Tac Toe from your web browser with a friend or colleague? No? Well, just in case. Built using Javascript, JQuery, CSS, and Bootstrap."},
-            {img: "assets/images/Tic-Tac-Toe.PNG"},
-            {linkOne: "https://edwardsjtimothy.github.io/Tic-Tac-Toe/"},
-            {linkTwo: "https://github.com/edwardsjtimothy/TicTacToe"}
+            { title: "Online Marketplace" },
+            { para: "A backend app that simulates the basic functionality of an online marketplace. The user can access inventory via terminal and place an order. The inventory is then updated and a total cost is provided. Built using Node.js, Express, Javascript, and MySQL." },
+            { img: "assets/images/bamazon.png" },
+            { linkOne: ""},
+            { linkTwo: "https://github.com/edwardsjtimothy/bamazon" }
         ],
+        [
+            { title: "Gif Generator" },
+            { para: "This app uses the Giphy API to generate 10 gifs based on whichever button is clicked. The user can also add their own buttons. Built using Javascript, JQuery, CSS, and Bootstrap." },
+            { img: "assets/images/Gif-Generator.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/Gif-Generator/" },
+            { linkTwo: "https://github.com/edwardsjtimothy/Gif-Generator" }
+        ],
+        [
+            { title: "Tic Tac Toe" },
+            { para: "Have you ever felt that you needed to play Tic Tac Toe from your web browser with a friend or colleague? No? Well, just in case. Built using Javascript, JQuery, CSS, and Bootstrap." },
+            { img: "assets/images/Tic-Tac-Toe.PNG" },
+            { linkOne: "https://edwardsjtimothy.github.io/Tic-Tac-Toe/" },
+            { linkTwo: "https://github.com/edwardsjtimothy/TicTacToe" }
+        ],
+        
     ];
 
     //generates portfolio cards
@@ -27,7 +42,7 @@ $(function () {
         let rowOrNot = 0;
         let rowNum = 1;
         let rowDiv = $("<div>").addClass(`row profile${rowNum}`);
-        const newRow = () => {
+        for (i = 0; i < cards.length; i++) {
             let colDiv = $("<div>").addClass("col-12 col-sm-12 col-md-6 col-lg-4 check-it");
             let cardDiv = $("<div>").addClass("card info").css("width", "18rem;")
             let img = $("<img>").attr("src", `${cards[i][2].img}`).addClass("card-img-top")
@@ -36,6 +51,10 @@ $(function () {
             let cardPara = $("<p>").addClass("card-text").text(`${cards[i][1].para}`);
             let linkOne = $("<a>").attr({ "target": "_blank", "href": `${cards[i][3].linkOne}` }).addClass("btn btn-dark port-link space").text("The App");
             let linkTwo = $("<a>").attr({ "target": "_blank", "href": `${cards[i][4].linkTwo}` }).addClass("btn btn-dark port-link").text("The Repo");
+
+            if (cards[i][3].linkOne === ""){
+                linkOne = null
+            }
 
             rowDiv.append(colDiv);
             colDiv.append(cardDiv);
@@ -48,9 +67,6 @@ $(function () {
                 rowOrNot = 0;
                 rowNum++
             }
-        }
-        for (i = 0; i < cards.length; i++) {
-            newRow();
         }
     }
 
