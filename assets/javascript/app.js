@@ -328,5 +328,4 @@ $(function () {
     //cycling background
 backGroundImgCyle();
 hoverCheck();
-
 });
