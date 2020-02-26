@@ -1,9 +1,5 @@
 $(function () {
 
-    $.getScript("assets/javascript/cards.js", function() {
-        console.log("cards.js imported");
-     });
-
     //elements hidden on page load
     $(".resume-con").hide();
     $(".res-btn").hide();
