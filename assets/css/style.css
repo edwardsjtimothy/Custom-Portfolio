@@ -185,6 +185,10 @@ padding-right: 17px;
   top: 90px;
 }
 
+.space {
+  margin-right: 8px;
+}
+
 .float-left {	
   float: left;	
 }	
