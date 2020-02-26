@@ -18,11 +18,11 @@ $(function () {
             {linkTwo: "https://github.com/edwardsjtimothy/Gif-Generator"}
         ],
         [
-            {title: "Gif Generator"},
-            {para: "This app uses the Giphy API to generate 10 gifs based on whichever button is clicked. The user can also add their own buttons. Built using Javascript, JQuery, CSS, and Bootstrap."},
-            {img: "assets/images/Gif-Generator.PNG"},
-            {linkOne: "https://edwardsjtimothy.github.io/Gif-Generator/"},
-            {linkTwo: "https://github.com/edwardsjtimothy/Gif-Generator"}
+            {title: "Tic Tac Toe"},
+            {para: "Have you ever felt that you needed to play Tic Tac Toe from your web browser with a friend or colleague? No? Well, just in case. Built using Javascript, JQuery, CSS, and Bootstrap."},
+            {img: "assets/images/Tic-Tac-Toe.PNG"},
+            {linkOne: "https://edwardsjtimothy.github.io/Tic-Tac-Toe/"},
+            {linkTwo: "https://github.com/edwardsjtimothy/TicTacToe"}
         ],
     ];
 
@@ -30,11 +30,8 @@ $(function () {
     const cardGen = () => {
         let rowOrNot = 0;
         let rowNum = 1;
-        for (i = 0; i < cards.length; i++) {
-            if (rowOrNot === 3) {
-                rowNum++
-            }
-            let rowDiv = $("<div>").addClass(`row profile${rowNum}`);
+        let rowDiv = $("<div>").addClass(`row profile${rowNum}`);
+        const newRow = () => {
             let colDiv = $("<div>").addClass("col-12 col-sm-12 col-md-6 col-lg-4 check-it");
             let cardDiv = $("<div>").addClass("card info").css("width", "18rem;")
             let img = $("<img>").attr("src", `${cards[i][2].img}`).addClass("card-img-top")
@@ -50,7 +47,14 @@ $(function () {
             cardBody.append(cardHead, cardPara, linkOne, linkTwo)
             cardDiv.append(cardBody);
             $(".bod-con").append(rowDiv)
-
+            rowOrNot++
+            if (rowOrNot === 2) {
+                rowOrNot = 0;
+                rowNum++
+            }
+        }
+        for (i = 0; i < cards.length; i++) {
+            newRow();
         }
     }
 
