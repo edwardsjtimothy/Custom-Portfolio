@@ -17,8 +17,8 @@ $(function () {
             { title: "DevBlog" },
             { para: "Full Stack blog application built in Python/Django and Postgresql. Deployed on Heroku with help from AWS S3 Buckets. Create and account and give it a try!" },
             { img: "assets/images/django-blog.PNG" },
-            { linkOne: "https://edwardsjtimothy.github.io/MemoryMadness/"},
-            { linkTwo: "https://github.com/edwardsjtimothy/MemoryMadness.git"}
+            { linkOne: "https://devblogtje.herokuapp.com/"},
+            { linkTwo: "https://github.com/edwardsjtimothy/DjangoBlog"}
         ],
         [
             { title: "Memory Madness" },
