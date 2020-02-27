@@ -4,7 +4,18 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Roboto Mono', monospace;
-    background: url("../images/body-5.jpg") no-repeat center center fixed; 
+  }
+
+  .active {
+    background: url("../images/backgrounds/body-5.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .switch {
+    background: url("../images/backgrounds/body-9.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,7 +23,7 @@ body, html {
   }
   
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/darkness.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/backgrounds/darkness.png");
     height: 50%;
     position: relative;
     overflow: hidden;
@@ -75,7 +86,7 @@ body, html {
 
 
 .info {
-  background: url("../images/darkness.png");
+  background: url("../images/backgrounds/darkness.png");
   margin: 20px 10px 10px 0px; 
   padding: 10px 10px 20px 10px;
   border: 2px solid #00ffff; 

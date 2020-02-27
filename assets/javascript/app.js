@@ -10,9 +10,7 @@ $(function () {
 
     //variable to establish initial wait period before running random pulse function.
     let bpm = 10000;
-
-    //array of images for background
-    let bodyArr = ["assets/images/body-1.jpg","assets/images/body-2.jpg","assets/images/body-3.jpg","assets/images/body-4.jpg","assets/images/body-5.jpg","assets/images/body-6.jpg","assets/images/body-7.jpg","assets/images/body-8.jpg","assets/images/body-9.jpg","assets/images/body-10.jpg",];   
+   
 
     //checking if hero photo has been moused over
 
@@ -23,31 +21,6 @@ $(function () {
                 };
           },30000);
         };
-
-    // cycling through background images
-    const backGroundImgCyle =()=> {
-
-        let photoNum = Math.floor(Math.random() * 10);
-
-        $("body, html, .modal-content").css({
-            "background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
-            "-webkit-background-size": "cover",
-            "-moz-background-size": "cover",
-            "-o-background-size": "cover",
-            "background-size": "cover"
-        });
-
-        setInterval(function() {
-            let photoNum = Math.floor(Math.random() * 10);
-
-                $("body, html, .modal-content").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
-                "-webkit-background-size": "cover",
-                "-moz-background-size": "cover",
-                "-o-background-size": "cover",
-                "background-size": "cover"
-                });
-        },40000);
-    };
 
     //pulses ring divs
     const heartbeat =()=> {
@@ -231,6 +204,5 @@ $(function () {
     });
 
     //cycling background
-backGroundImgCyle();
 hoverCheck();
 });
