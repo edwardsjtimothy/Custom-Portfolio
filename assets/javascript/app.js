@@ -19,7 +19,7 @@ $(function () {
                 if (!hover) {
                     $(".modal").modal();
                 };
-          },30000);
+          },3000);
         };
 
     //pulses ring divs

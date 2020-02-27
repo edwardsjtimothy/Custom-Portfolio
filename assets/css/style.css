@@ -144,7 +144,7 @@ body.modal-open[style] {
 /* resume styles */
 
 .resume-con { 
-  background: url("../images/darkness.png");
+  background: url("../images/backgrounds/darkness.png");
   margin: 20px 10px 10px 0px; 
   padding: 10px;
   border: 2px solid #00ffff; 
