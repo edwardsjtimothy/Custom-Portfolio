@@ -19,7 +19,7 @@ const backGroundImgCycle =()=> {
     setInterval(function() {
         let photoNum = Math.floor(Math.random() * 10);
 
-            $(".switch, .modal-content").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
+            $(".active, .modal-content").css({"background": `url(${bodyArr[photoNum]}) no-repeat center center fixed`,
             "-webkit-background-size": "cover",
             "-moz-background-size": "cover",
             "-o-background-size": "cover",
