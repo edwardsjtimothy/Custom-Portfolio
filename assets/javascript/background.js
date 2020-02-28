@@ -13,7 +13,8 @@ const backGroundImgCycle =()=> {
         "-webkit-background-size": "cover",
         "-moz-background-size": "cover",
         "-o-background-size": "cover",
-        "background-size": "cover"
+        "background-size": "cover",
+        "transition": "background 4s ease-in"
     });
 
     setInterval(function() {
@@ -23,7 +24,8 @@ const backGroundImgCycle =()=> {
             "-webkit-background-size": "cover",
             "-moz-background-size": "cover",
             "-o-background-size": "cover",
-            "background-size": "cover"
+            "background-size": "cover",
+            "transition": "background 4s ease-in"
             });
     },40000);
 };
