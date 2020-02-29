@@ -11,7 +11,7 @@ $(function () {
         ],
         [
             { title: "DevBlog" },
-            { para: "Full Stack blog application built in Python/Django and Postgresql. Deployed on Heroku with help from AWS S3 Buckets. Create and account and give it a try!" },
+            { para: "Full Stack blog application built in Python/Django and Postgresql. Deployed on Heroku with help from AWS S3. Create and account and give it a try!" },
             { img: "assets/images/portfolio_cards/django-blog.PNG" },
             { linkOne: "https://devblogtje.herokuapp.com/" },
             { linkTwo: "https://github.com/edwardsjtimothy/DjangoBlog" }
