@@ -216,10 +216,12 @@ body.modal-open[style] {
   width: 0px;
 }
 
+.card-section {
+  margin: 10px 0px 10px 0px;
+  color: whitesmoke;
+}
 
-
-
-
-
-
+.card-section-border {
+  position: relative;
+}
 
