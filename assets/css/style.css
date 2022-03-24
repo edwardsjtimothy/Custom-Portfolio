@@ -223,5 +223,6 @@ body.modal-open[style] {
 
 .card-section-border {
   position: relative;
+  width: 99%;
 }
 
